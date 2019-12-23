@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>small example for leafletjs</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+	
+		<link rel="stylesheet" href="components/css/common.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div>
+					<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()">
+						<option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option>
+					</select>
+			</div>
+			<div id="map"></div>
+
+			<script type="text/javascript" src="components/js/map_display.js"></script>
+			<script type="text/javascript" src="components/js/geojson_display.js"></script>
+		</div>
+	</body>
+</html>
