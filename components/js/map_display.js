@@ -11,7 +11,7 @@ tileLayer.addTo(map);
 
 // 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
 var urlBasemap = "../../data/basemaps.json";
-fetch(urlBasemap, {method: "GET", redirect: "follow"}).then(response => {
+fetch("https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json", {method: "GET", redirect: "follow"}).then(response => {
 	if (response.ok) {
 		response.json().then(json => {
 			var selector = document.getElementById("selector");
