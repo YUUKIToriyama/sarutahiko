@@ -10,19 +10,24 @@ tileLayer.addTo(map);
 
 
 // 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
-var request = new XMLHttpRequest();
-request.open("GET", "../../data/basemaps.json");
-request.send();
-request.onload = function() {
-	var selector = document.getElementById("selector");
+var urlBasemap = "../../data/basemaps.json";
+fetch(urlBasemap, {method: "GET", redirect: "follow"}).then(response => {
+	if (response.ok) {
+		response.json().then(json => {
+			var selector = document.getElementById("selector");
 
-	JSON.parse(request.response).forEach(hash => {
-		var option = document.createElement("option");
-		option.value = hash.url;
-		option.innerText = hash.name;
-		selector.appendChild(option);
-	});
-}
+			json.forEach(hash => {
+				var option = document.createElement("option");
+				option.value = hash.url;
+				option.innerText = hash.name;
+				selector.appendChild(option);
+			});
+		})
+	} else {
+		console.log("通信エラー");
+	}
+});
+
 
 // プルダウンリストの選択を変更するとそれに合わせてベースマップが変わる仕組み
 function selectboxChange() {
