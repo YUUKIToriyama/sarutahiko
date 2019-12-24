@@ -27,6 +27,8 @@ function loadRemoteGeoJSON() {
 		} else {
 			alert(`${url}は読み込めませんでした。`);
 		}
+	}).catch(err => {
+		alert("ネットワークエラー\n" + err.message);
 	});
 
 	textForm.focus();
