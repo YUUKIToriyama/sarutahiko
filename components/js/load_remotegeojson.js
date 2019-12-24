@@ -1,7 +1,7 @@
 /* load_remotegeojson.js */
 
-var importedGeoJSONs = [];
-var idRemote = 0;
+var loadedRemoteJSONFiles = [];
+var countRemote = 0;
 
 function loadRemoteGeoJSON() {
 	var textForm = document.getElementById("urlRemoteFile");
@@ -16,13 +16,13 @@ function loadRemoteGeoJSON() {
 			var responseURL = response.url;
 			var fileName = responseURL.split("/").pop();
 			var contentType = response.headers.get('Content-Type');
-			document.getElementById("loadedRemoteGeoJSONs").innerHTML += `<tr><td><input type="checkbox" id="loadedRemoteGeoJSON-${idRemote}" onChange="showRemoteGeoJSON(${idRemote})"/><td>${fileName}</td><td>${responseURL}</td><td>${contentType}</td></tr>`;
+			document.getElementById("loadedRemoteGeoJSONs").innerHTML += `<tr><td><input type="checkbox" id="loadedRemoteGeoJSON-${countRemote}" onChange="showRemoteGeoJSON(${countRemote})"/><td>${fileName}</td><td>${responseURL}</td><td>${contentType}</td></tr>`;
 
 			// 読み込んだJSONファイルをleafletjsのオブジェクトに変換し配列に格納する
-			// オブジェクトへのアクセスはidRemoteをもちいておこなう
+			// オブジェクトへのアクセスはcountRemoteをもちいておこなう
 			response.json().then(geoJson => {
-				importedGeoJSONs.push(L.geoJSON(geoJson));
-				idRemote = idRemote + 1;
+				loadedRemoteJSONFiles.push(L.geoJSON(geoJson));
+				countRemote = countRemote + 1;
 			});
 		} else {
 			alert(`${url}は読み込めませんでした。`);

@@ -1,15 +1,15 @@
 /* map_display.js */
 
+var map = L.map("map").setView([36.0, 135.0], 6);
+// デフォルトのベースマップとしてOpenStreetMapのタイル画像を読み込む
+var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	attribution: "OpenStreetMap",
+	maxZoom: 19
+});
+tileLayer.addTo(map);
+	
+	
 window.onload = x => {
-	var map = L.map("map").setView([36.0, 135.0], 5);
-	// デフォルトのベースマップとしてOpenStreetMapのタイル画像を読み込む
-	var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-		attribution: "OpenStreetMap",
-		maxZoom: 19
-	});
-	tileLayer.addTo(map);
-	
-	
 	// 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
 	var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json";
 	fetch(urlBasemap, {method: "GET", redirect: "follow", mode: "cors"}).then(response => {

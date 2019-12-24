@@ -1,6 +1,30 @@
 /* common.css */
 
 #map {
-	width: 500px;
-	height: 500px;
+	width: 700px;
+	height: 350px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 10px;
+	padding: 0;
+	table-layout: fixed;
+}
+
+table tr {
+	background: #fff;
+	border: 1px solid #bbb;
+	padding: .35em;
+}
+table tr:hover {
+	background: #eee;
+}
+table th,
+table td {
+	padding: 1em 10px 1em 1em;
+	border-right: 1px solid #bbb;
+}
+table th {
+	font-size: .85em;
 }

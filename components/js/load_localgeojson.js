@@ -1,9 +1,9 @@
 /* load_localgeojson.js */
 
-// 読み込んだgeoJSONファイルはleafletjsのgeojsonオブジェクトとして配列loadedJSONFilesに格納する
-// n番目に読み込まれたファイルはloadedJSONFiles[n-1]
-var loadedJSONFiles = [];
-var count = 0;
+// 読み込んだgeoJSONファイルはleafletjsのgeojsonオブジェクトとして配列loadedLocalJSONFilesに格納する
+// n番目に読み込まれたファイルはloadedLocalJSONFiles[n-1]
+var loadedLocalJSONFiles = [];
+var countLocal = 0;
 
 // ファイル選択ボタンのオブジェクト
 var fileLoad = document.getElementById("chooseFiles");
@@ -24,14 +24,14 @@ function handleFileSelect(evt) {
 		var tableHTML = "";
 
 		fileList.forEach(f => {
-			tableHTML = tableHTML + `<tr><td><input type="checkbox" id="loadedGeoJSON-${count}" onChange="showLocalGeoJSON(${count})"/><td>${f.name}</td><td>${f.size}</td><td>${f.type}</td></tr>`;
+			tableHTML = tableHTML + `<tr><td><input type="checkbox" id="loadedGeoJSON-${countLocal}" onChange="showLocalGeoJSON(${countLocal})"/><td>${f.name}</td><td>${f.size}</td><td>${f.type}</td></tr>`;
 
 			var fileReader = new FileReader();
 			fileReader.onload = x => {
-				loadedJSONFiles.push(L.geoJSON(JSON.parse(fileReader.result)));
+				loadedLocalJSONFiles.push(L.geoJSON(JSON.parse(fileReader.result)));
 			}
 			fileReader.readAsText(f);
-			count = count + 1;
+			countLocal = countLocal + 1;
 		});
 
 		// 読み込んだファイルの一覧を表示する
