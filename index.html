@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>small example for leafletjs</title>
-
+		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
-	
+		
 		<link rel="stylesheet" href="components/css/common.css" />
 	</head>
 	<body>
@@ -19,11 +19,11 @@
 			<div id="map"></div>
 
 			<div id="">
-				<form name="uploadGeoJSON">
+				<form name="localGeoJSON">
 					<fieldset>
 						<legend>GeoJSONファイルのアップロード</legend>
 						<input type="file" name="chooseFiles" id="chooseFiles" multiple/>
-						<table id="uploadedGeoJSONs">	
+						<table id="loadedLocalGeoJSONs">	
 							<tr>
 								<th></th>
 								<th>ファイル名</th>
@@ -34,25 +34,30 @@
 					</fieldset>
 				</form>
 				<script type="text/javascript" src="components/js/load_localgeojson.js"></script>
-				<form name="loadGeoJSONForm">
+				<form name="remoteGeoJSON">
 					<fieldset>
 						<legend>リモートにあるGeoJSONファイルを読み込む</legend>
-						<input type="text" name="_url" value="https://gist.githubusercontent.com/YUUKIToriyama/e3cabb0bcde4bd50009ed96c5b8279b8/raw/48c5150f59bc508c5b5abd17eb1fd61395ed1fae/pref_kyoto.geojson" />
-						<input type="submit" value="読み込む" />
-						<table id="loadedGeoJSONs">
+						<input type="text" name="urlRemoteFile" id="urlRemoteFile" value="https://gist.githubusercontent.com/YUUKIToriyama/e3cabb0bcde4bd50009ed96c5b8279b8/raw/48c5150f59bc508c5b5abd17eb1fd61395ed1fae/pref_kyoto.geojson" onfocus="select()"/>
+						<input type="button" id="loadButton" value="読み込む" onclick="loadRemoteGeoJSON()"/>
+						<table id="loadedRemoteGeoJSONs">
 							<tr>
-								<th>filename</th>
-								<th>title</th>
-								<th>url</th>
-							</tr>
-							<tr>
-								<td>hogehoge.geojson</td>
-								<td>flickrAPI</td>
-								<td>https://gist.githubusercontent.com/YUUKIToriyama/e3cabb0bcde4bd50009ed96c5b8279b8/raw/48c5150f59bc508c5b5abd17eb1fd61395ed1fae/pref_kyoto.geojson</td>
+								<th></th>
+								<th>ファイル名</th>
+								<th>ファイルタイプ</th>
+								<th>URL</th>
 							</tr>
 						</table>
 					</fieldset>
 				</form>
+				<script type="text/javascript">
+					document.onkeypress = x => {
+						if (window.event.keyCode == 13 && document.activeElement.id != "loadButton") {
+							alert("再読込防止のためテキストエリア入力時のEnterキーの入力を抑制しています");
+							return false;
+						}
+					}
+				</script>
+				<script type="text/javascript" src="components/js/load_remotegeojson.js"></script>
 			</div>
 
 			<script type="text/javascript" src="components/js/map_display.js" charset="UTF-8"></script>

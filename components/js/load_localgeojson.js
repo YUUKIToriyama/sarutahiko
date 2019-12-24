@@ -35,7 +35,7 @@ function handleFileSelect(evt) {
 		});
 
 		// 読み込んだファイルの一覧を表示する
-		document.getElementById("uploadedGeoJSONs").innerHTML += tableHTML;
+		document.getElementById("loadedLocalGeoJSONs").innerHTML += tableHTML;
 	}	
 	// ファイルの選択をクリアする
 	fileLoad.value = "";

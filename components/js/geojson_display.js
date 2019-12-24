@@ -1,17 +1,14 @@
 /* geojson_display.js */
 
-function showRemoteGeoJSON(url) {
-	// モダンJavascriptの新機能FetchAPIを使ってリモートのファイルにアクセス
-	fetch(url, {method: "GET", redirect: "follow", mode: "cors"}).then(response => {
-		if(response.ok){
-			response.json().then(geoJson => {
-				L.geoJSON(geoJson).addTo(map);
-			});
-		} else {
-			console.log("通信エラー");
-		}
-	});
+function showRemoteGeoJSON(id) {
+	var checkbox = document.getElementById(`loadedRemoteGeoJSON-${id}`);
+	if (checkbox.checked) {
+		importedGeoJSONs[id].addTo(map);
+	} else {
+		map.removeLayer(importedGeoJSONs[id]);
+	}
 }
+
 
 function showLocalGeoJSON(id) {
 	var checkbox = document.getElementById(`loadedGeoJSON-${id}`);
