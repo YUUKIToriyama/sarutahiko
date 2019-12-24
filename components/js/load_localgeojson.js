@@ -1,7 +1,9 @@
-/*load_geojson.js*/
+/* load_localgeojson.js */
 
 // 読み込んだgeoJSONファイルを配列loadedJSONFilesに格納する
+// n番目に読み込まれたファイルはloadedJSONFiles[n-1]にある
 var loadedJSONFiles = [];
+var count = 0;
 
 // ファイル選択ボタンのオブジェクト
 var fileLoad = document.getElementById("chooseFiles");
@@ -19,18 +21,21 @@ function handleFileSelect(evt) {
 
 	// 選択したファイルを読み込む処理
 	if (window.confirm("【読込ファイルの確認】\n" + fileList.map(x => "・ " + x.name).join("\n") + "\nの以上" + fileList.length + "件を読み込みます。\nよろしいですか？")) {
-		// 読み込んだファイルの一覧を表示する
-		document.getElementById('uploadedGeoJSONs').innerHTML += fileList.map(x => `<tr><td><input type="checkbox" name="file-${x.name}"/><td>${x.name}</td><td>${x.size}</td><td>${x.type}</td></tr>`).join('');
+		var tableHTML = "";
 
 		fileList.forEach(f => {
+			tableHTML = tableHTML + `<tr><td><input type="checkbox" name="loadedGeoJSON-${count}"/><td>${f.name}</td><td>${f.size}</td><td>${f.type}</td></tr>`;
+			
 			var fileReader = new FileReader();
 			fileReader.onload = x => {
-				//console.log(fileReader.result);
-
-				loadedJSONFiles.push({"aaa" : JSON.parse(fileReader.result)});
+				loadedJSONFiles.push(JSON.parse(fileReader.result));
 			}
 			fileReader.readAsText(f);
+			count = count + 1;
 		});
+
+		// 読み込んだファイルの一覧を表示する
+		document.getElementById("uploadedGeoJSONs").innerHTML += tableHTML;
 	}	
 	// ファイルの選択をクリアする
 	fileLoad.value = "";

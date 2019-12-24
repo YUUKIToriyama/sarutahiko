@@ -4,9 +4,8 @@
 		<meta charset="UTF-8">
 		<title>small example for leafletjs</title>
 
-		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
 	
 		<link rel="stylesheet" href="components/css/common.css" />
 	</head>
@@ -24,7 +23,6 @@
 					<fieldset>
 						<legend>GeoJSONファイルのアップロード</legend>
 						<input type="file" name="chooseFiles" id="chooseFiles" multiple/>
-						<!--<input type="button" value="アップロード" id="test"/>-->
 						<table id="uploadedGeoJSONs">	
 							<tr>
 								<th></th>
@@ -35,7 +33,7 @@
 						</table>
 					</fieldset>
 				</form>
-				<script type="text/javascript" src="components/js/load_geojson.js"></script>
+				<script type="text/javascript" src="components/js/load_localgeojson.js"></script>
 				<form name="loadGeoJSONForm">
 					<fieldset>
 						<legend>リモートにあるGeoJSONファイルを読み込む</legend>
