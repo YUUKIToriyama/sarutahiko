@@ -52,6 +52,22 @@
 						</table>
 					</fieldset>
 				</form>
+				<form name="fromFlickr">
+					<fieldset>
+						<legend>from Flickr import</legend>
+						<input type="text" name="flickrRequestUrl" id="flickrRequestUrl" />
+						<input type="button" id="flickrLoadButton" value="Flickrから読み込み" onclick="displayFlickrData()" />
+						<table id="fromFlickr">
+							<tr>
+									<th></th>
+									<th>クエリ</th>
+									<th>URL</th>
+									<th>備考</th>
+
+							</tr>
+						</table>
+					</fieldset>
+				</form>
 				<script type="text/javascript" src="components/js/load_remotegeojson.js"></script>
 				<script type="text/javascript">
 					document.onkeypress = x => {

@@ -1,6 +1,6 @@
 //url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3087bfa92564db76aee146dad1bb9416&tags=asakusa&min_upload_date=2019%2F05%2F01&max_upload_date=2019%2F05%2F30&has_geo=&extras=geo%2C+url_t%2C+url_o%2C+url_sq%2C+date_taken%2C+owner_name%2C+description%2C+media&per_page=500&format=json&nojsoncallback=1"
 //url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3087bfa92564db76aee146dad1bb9416&tags=asakusa&min_upload_date=2019%2F05%2F01&max_upload_date=2019%2F05%2F30&has_geo=1&extras=geo%2C+url_t%2C+url_o%2C+url_sq%2C+date_taken%2C+owner_name%2C+description%2C+media&per_page=500&format=json&nojsoncallback=1"
-url = "../../test.json";
+//url = "../../test.json";
 function flickrToGeoJSON(requestURL) {
 return new Promise((resolve, reject) => {
 	fetch(requestURL, {method: "GET", redirect: "follow", mode: "cors"}).then(response => {
@@ -89,68 +89,6 @@ function showFlickrData(geojson) {
 	}).addTo(map);
 }
 
-var testdata = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "title": "47948231543",
-        "description": "People praying at Senso-ji Temple in Asakusa, Tokyo. 東京淺草寺的信眾",
-        "marker-color": "#00FFFF",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "flickr-metadata": {
-          "id": "47948231543",
-          "owner_name": "jameshungyc",
-          "owner_id": "157757610@N04",
-          "title": "Praying 祈禱",
-          "url_t": "https://live.staticflickr.com/65535/47948231543_54084a2994_t.jpg",
-          "url_sq": "https://live.staticflickr.com/65535/47948231543_54084a2994_s.jpg",
-          "description": "People praying at Senso-ji Temple in Asakusa, Tokyo. 東京淺草寺的信眾"
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          "139.796763",
-          "35.714241"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "title": "47941418213",
-        "description": "浅草雷門付近にて\n草24亀戸駅経由浅草寿町行 ASAKUSA-KOTOBUKICHO\nラグビーワールドカップ2019ラッピングバス RWC2019 wrapping bus\nR-N285 臨海支所所属（はとバス委託）\n足立230い285（2020東京大会特別仕様ナンバープレート）",
-        "marker-color": "#00FFFF",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "flickr-metadata": {
-          "id": "47941418213",
-          "owner_name": "izayuke_tarokaja",
-          "owner_id": "46052146@N08",
-          "title": "東京都交通局",
-          "url_t": "https://live.staticflickr.com/65535/47941418213_11cace007e_t.jpg",
-          "url_o": "https://live.staticflickr.com/65535/47941418213_23cc0d3117_o.jpg",
-          "url_sq": "https://live.staticflickr.com/65535/47941418213_11cace007e_s.jpg",
-          "full_height": 4608,
-          "full_width": 3456,
-          "description": "浅草雷門付近にて\n草24亀戸駅経由浅草寿町行 ASAKUSA-KOTOBUKICHO\nラグビーワールドカップ2019ラッピングバス RWC2019 wrapping bus\nR-N285 臨海支所所属（はとバス委託）\n足立230い285（2020東京大会特別仕様ナンバープレート）"
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          "139.797635",
-          "35.710743"
-        ]
-      }
-    }
-  ]
-}
-
-//showFlickrData(testdata);
 /*
 //showFlickrData(flickrToGeoJSON(url));
 const promise = new Promise((resolve, reject) => {
@@ -159,9 +97,13 @@ const promise = new Promise((resolve, reject) => {
 promise.then(x => showFlickrData(x));
 */
 
-flickrToGeoJSON(url).then(function onFulfilled(value) {
-	console.log(value);
-	showFlickrData(value);
-}).catch(function onRejected(error) {
-	console.log(error);
-});
+function displayFlickrData(){
+	var url = document.getElementById("flickrRequestUrl").value;
+	console.log(url);
+	flickrToGeoJSON(url).then(function onFulfilled(value) {
+		console.log(value);
+		showFlickrData(value);
+	}).catch(function onRejected(error) {
+		console.log(error);
+	});
+}
