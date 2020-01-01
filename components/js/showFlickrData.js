@@ -93,6 +93,7 @@ function showFlickrData(geojson) {
 	}).addTo(map);
 }
 
+// 入力画面からURLを読み取りFlickrからデータを読み込む
 function displayFlickrData(){
 	var url = document.getElementById("flickrRequestUrl").value;
 	console.log(url);

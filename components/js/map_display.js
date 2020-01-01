@@ -7,7 +7,23 @@ var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", 
 	maxZoom: 19
 });
 tileLayer.addTo(map);
-	
+
+
+L.CustomControl = L.Control.extend({
+	onAdd: function(map) {
+		var ctrl1 = L.DomUtil.create("div");
+		ctrl1.innerHTML = `<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()"><option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option></select>`;
+		return ctrl1;
+	},
+	onRemove: function(map) {
+		//
+	}
+});
+L.control.custom = function(opts) {
+	return new L.CustomControl(opts);
+}
+
+L.control.custom({potision: "buttomleft"}).addTo(map);
 	
 window.onload = x => {
 	// 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
