@@ -21,7 +21,13 @@ function loadRemoteGeoJSON() {
 			// 読み込んだJSONファイルをleafletjsのオブジェクトに変換し配列に格納する
 			// オブジェクトへのアクセスはcountRemoteをもちいておこなう
 			response.json().then(geoJson => {
-				loadedRemoteJSONFiles.push(L.geoJSON(geoJson));
+				loadedRemoteJSONFiles.push(L.geoJSON(geoJson, {
+					// 各フィーチャにポップアップ要素を追加する
+					onEachFeature: function (feature, layer) {
+						var popupText = '<div class="popupText"><table>' + Object.entries(feature).map(x => `<tr><td>${x[0]}</td><td class="value">${JSON.stringify(x[1])}</td></tr>`).join("\n") + '</table></div>';
+						layer.bindPopup(popupText);
+					}	
+				}));
 				countRemote = countRemote + 1;
 			});
 		} else {

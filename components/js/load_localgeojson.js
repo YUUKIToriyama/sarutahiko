@@ -28,7 +28,19 @@ function handleFileSelect(evt) {
 
 			var fileReader = new FileReader();
 			fileReader.onload = x => {
-				loadedLocalJSONFiles.push(L.geoJSON(JSON.parse(fileReader.result)));
+				try {
+					var geojson = JSON.parse(fileReader.result);
+				} catch(error) {
+					console.log(error);
+					alert("パースエラー\n" + error);
+				}
+				loadedLocalJSONFiles.push(L.geoJSON(geojson, {
+					// 各フィーチャにポップアップの説明をつける
+					onEachFeature: function (feature, layer) {
+						var popupText = '<div class="popupText"><table>' + Object.entries(feature).map(x => `<tr><td>${x[0]}</td><td class="value">${JSON.stringify(x[1])}</td></tr>`).join("\n") + '</table></div>';
+						layer.bindPopup(popupText);
+					}	
+				}));
 			}
 			fileReader.readAsText(f);
 			countLocal = countLocal + 1;

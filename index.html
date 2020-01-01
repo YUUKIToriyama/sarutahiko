@@ -55,7 +55,7 @@
 				<form name="fromFlickr">
 					<fieldset>
 						<legend>from Flickr import</legend>
-						<input type="text" name="flickrRequestUrl" id="flickrRequestUrl" />
+						<input type="text" name="flickrRequestUrl" id="flickrRequestUrl" value="https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3087bfa92564db76aee146dad1bb9416&tags=osaka&min_upload_date=2019%2F12%2F01&has_geo=1&extras=geo%2Curl_t%2Curl_o%2Curl_sq%2Cdate_taken%2Cowner_name%2Cdescription%2Cmedia&per_page=500&format=json&nojsoncallback=1"/>
 						<input type="button" id="flickrLoadButton" value="Flickrから読み込み" onclick="displayFlickrData()" />
 						<table id="fromFlickr">
 							<tr>
@@ -80,7 +80,6 @@
 			</div>
 
 		</div>
-		<input type="button" name="" id="" value="" onClick="showFlickrData(flickrToGeoJSON('./test.json'));">
 
 		<script type="text/javascript" src="components/js/map_display.js" charset="UTF-8"></script>
 		<script type="text/javascript" src="components/js/geojson_display.js"></script>

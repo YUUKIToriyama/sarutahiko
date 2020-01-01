@@ -9,7 +9,7 @@ table {
 	border-collapse: collapse;
 	margin: 10px;
 	padding: 0;
-	table-layout: fixed;
+	table-layout: auto;
 }
 
 table tr {
@@ -27,4 +27,29 @@ table td {
 }
 table th {
 	font-size: .85em;
+}
+table img {
+	width: auto;
+}
+
+.popupText {
+	width: inherit;
+}
+
+.popupText table {
+	width: inherit;
+	margin: 0;
+}
+.popupText td {
+	padding: 2px;
+}
+.value {
+	overflow: scroll;
+	height: 3em;
+	line-height: 1.5;
+}
+
+/* テーブルをポップアップ画面の中に合わせるため二列目の文字列をとにかく折り返す */
+.popupText td:nth-child(2) {
+	word-break: break-word;
 }

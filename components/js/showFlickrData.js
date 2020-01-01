@@ -1,4 +1,3 @@
-//url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3087bfa92564db76aee146dad1bb9416&tags=asakusa&min_upload_date=2019%2F05%2F01&max_upload_date=2019%2F05%2F30&has_geo=&extras=geo%2C+url_t%2C+url_o%2C+url_sq%2C+date_taken%2C+owner_name%2C+description%2C+media&per_page=500&format=json&nojsoncallback=1"
 //url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3087bfa92564db76aee146dad1bb9416&tags=asakusa&min_upload_date=2019%2F05%2F01&max_upload_date=2019%2F05%2F30&has_geo=1&extras=geo%2C+url_t%2C+url_o%2C+url_sq%2C+date_taken%2C+owner_name%2C+description%2C+media&per_page=500&format=json&nojsoncallback=1"
 //url = "../../test.json";
 function flickrToGeoJSON(requestURL) {
@@ -6,6 +5,7 @@ return new Promise((resolve, reject) => {
 	fetch(requestURL, {method: "GET", redirect: "follow", mode: "cors"}).then(response => {
 		if (response.ok) {
 			response.json().then(json => {
+				// flickrAPIから返ってきたJSONデータをGeoJSONフォーマットに変換する
 				var generatedJson = json.photos.photo.map(photo => { 
 					return {
 						"type": "Feature",
@@ -42,8 +42,15 @@ return new Promise((resolve, reject) => {
 					"type": "FeatureCollection",
 					"features": generatedJson
 				};
+
 				// resolveに返り値を格納して、あとでPromise.thenによって呼び出す。
 				resolve(geoJsonOutput);
+
+				// 読み込みリストを更新する
+				var fromFlickr = document.getElementById("fromFlickr");
+				var queries = requestURL.split("?")[1].split("&").map(q => q.split("=")).map(x => `<tr><td>${x[0]}</td><td>${decodeURIComponent(x[1])}</td></tr>`).join("\n");
+				fromFlickr.innerHTML += `<tr><td><input type="checkbox" id="" onChange=""></td><td><table>${queries}</table></td><td>${requestURL}</td>	<td>${json.photos.photo.length}件</td></tr>`;
+
 			}).catch(err => {
 				console.log(err.message);
 			});
@@ -60,14 +67,14 @@ function showFlickrData(geojson) {
 	L.geoJSON(geojson, {
 		onEachFeature: function (feature, layer) {
 			var popupText = `
-				<div style="width: 200px; padding: 20px;">
+				<div class="popupText">
 					<table>
 						<tr>
 							<td>Image</td>
 							<td><a href="${feature.properties["flickr-metadata"]["url_o"]}"><img src="${feature.properties["flickr-metadata"]["url_sq"]}" alt="${feature.properties["flickr-metadata"]["title"]}" width="150px" /></a></td>
 						</tr>
 						<tr>
-							<td>Title></td>
+							<td>Title</td>
 							<td><p>${feature.properties["flickr-metadata"]["title"]}</p></td>
 						</tr>
 						<tr>
