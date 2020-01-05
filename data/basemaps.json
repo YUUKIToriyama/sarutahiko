@@ -1,17 +1,120 @@
 [
   {
-    "name": "電子国土基本図 - 国土地理院",
-    "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
-    "attribution": "国土地理院"
+    "国土地理院": [
+      {
+        "name": "電子国土基本図 - 国土地理院",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "淡色地図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "全国最新写真",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      }
+    ]
   },
   {
-    "name": "淡色地図",
-    "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
-    "attribution": "国土地理院"
-  },
-  {
-    "name": "全国最新写真",
-    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
-    "attribution": "国土地理院"
+    "OSM": [
+      {
+        "name": "OpenStreetMap's Standard tile layer",
+        "url": "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+        "attribution": "openstreetmap.org"
+      },
+      {
+        "name": "German fork of the Standard tile layer",
+        "url": "https://a.tile.openstreetmap.de/${z}/${x}/${y}.png",
+        "attribution": "openstreetmap.de"
+      },
+      {
+        "name": "Wikimedia Maps",
+        "url": "https://maps.wikimedia.org/osm-intl/${z}/${x}/${y}.png",
+        "attribution": "wikimedia.org"
+      },
+      {
+        "name": "OpenCycleMap",
+        "url": "http://tile.thunderforest.com/cycle/${z}/${x}/${y}.png",
+        "attribution": "thunderforest.com"
+      },
+      {
+        "name": "Humanitarian map style",
+        "url": "http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png",
+        "attribution": "openstreetmap.fr"
+      },
+      {
+        "name": "OSM France",
+        "url": "http://a.tile.openstreetmap.fr/osmfr/${z}/${x}/${y}.png",
+        "attribution": "openstreetmap.fr"
+      },
+      {
+        "name": "wmflabs Hike & Bike",
+        "url": "https://tiles.wmflabs.org/hikebike/${z}/${x}/${y}.png",
+        "attribution": "wmflabs.org"
+      },
+      {
+        "name": "wmflabs Hillshading",
+        "url": "http://tiles.wmflabs.org/hillshading/${z}/${x}/${y}.png",
+        "attribution": "wmflabs.org"
+      },
+      {
+        "name": "wmflabs OSM B&W mapnik map grayscale",
+        "url": "https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png",
+        "attribution": "wmflabs.org"
+      },
+      {
+        "name": "wmflabs OSM no labels mapnik map without labels",
+        "url": "https://tiles.wmflabs.org/osm-no-labels/${z}/${x}/${y}.png",
+        "attribution": "wmflabs.org"
+      },
+      {
+        "name": "Stamen Toner",
+        "url": "http://a.tile.stamen.com/toner/${z}/${x}/${y}.png",
+        "attribution": "stamen.com"
+      },
+      {
+        "name": "Stamen Watercolor",
+        "url": "http://c.tile.stamen.com/watercolor/${z}/${x}/${y}.jpg",
+        "attribution": "stamen.com"
+      },
+      {
+        "name": "Transport Map",
+        "url": "http://tile.thunderforest.com/transport/${z}/${x}/${y}.png",
+        "attribution": "thunderforest.com"
+      },
+      {
+        "name": "Thunderforest Landscape",
+        "url": "http://tile.thunderforest.com/landscape/${z}/${x}/${y}.png",
+        "attribution": "thunderforest.com"
+      },
+      {
+        "name": "Thunderforest Outdoor",
+        "url": "http://tile.thunderforest.com/outdoors/${z}/${x}/${y}.png",
+        "attribution": "thunderforest.com"
+      },
+      {
+        "name": "Öpnvkarte",
+        "url": "http://tile.memomaps.de/tilegen/${z}/${x}/${y}.png",
+        "attribution": "Öpnvkarte.de"
+      },
+      {
+        "name": "Carto Light",
+        "url": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+        "attribution": "Carto"
+      },
+      {
+        "name": "Carto Dark",
+        "url": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+        "attribution": "Carto"
+      },
+      {
+        "name": "Carto Light",
+        "url": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+        "attribution": "Carto"
+      }
+    ]
   }
 ]

@@ -27,25 +27,32 @@ L.control.custom({potision: "buttomleft"}).addTo(map);
 	
 window.onload = x => {
 	// 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
-	var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json";
-	fetch(urlBasemap, {method: "GET", redirect: "follow", mode: "cors"}).then(response => {
-		if (response.ok) {
-			response.json().then(json => {
-				var selector = document.getElementById("selector");
-	
-				json.forEach(hash => {
-					var option = document.createElement("option");
-					option.value = hash.url;
-					option.innerText = hash.name;
-					selector.appendChild(option);
-				});
-			})
-		} else {
-			console.log("通信エラー");
-		}
+	//var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json";
+	var urlBasemap = "../../data/basemaps.json";
+	getRemoteData(urlBasemap).then(res => {
+		res.json().then(json => {
+			// jsonファイルの読み込みに成功したら
+			var pulldownList = document.getElementById("selector");
+			json.forEach(hash => {
+				Object.entries(hash).forEach(mapdatum => {
+					var optGroup = document.createElement("optgroup");
+					optGroup.label = mapdatum[0];
+					mapdatum[1].forEach(mapdata => {
+						var option = document.createElement("option");
+						option.value = mapdata.url;
+						option.innerText = mapdata.name;
+						optGroup.appendChild(option);
+					});
+					pulldownList.appendChild(optGroup);
+				});	
+			});
+		}).catch(err => {
+			console.log(err);
+		})
+	}).catch(err => {
+		console.log(err);
 	});
 }
-
 
 // プルダウンリストの選択を変更するとそれに合わせてベースマップが変わる仕組み
 function selectboxChange() {
