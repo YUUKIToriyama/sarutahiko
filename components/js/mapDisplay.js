@@ -1,17 +1,29 @@
 /* map_display.js */
 
-var map = L.map("map").setView([36.0, 135.0], 6);
-// デフォルトのベースマップとしてOpenStreetMapのタイル画像を読み込む
-var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-	attribution: "OpenStreetMap",
-	maxZoom: 19
+var baseMap = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	id: "default map",
+	attribution: "OpenStreetMap"
 });
-tileLayer.addTo(map);
 
+var map = L.map("map", {
+	center: [35.0, 135.0],
+	zoom: 9,
+	layers: [baseMap]
+});
+
+
+var layerControl;
+function addLayerControl() {
+	// レイヤコントロールのパーツを追加する
+	// layerControlに後付けで新しいレイヤを追加するには layerControl.addOverlay(layer, "layer name");
+	layerControl = L.control.layers({"basemap": baseMap});
+	layerControl.addTo(map);
+}
 
 window.onload = x => {
 	addSelectBasemapControl();
 	addChangeViewControl();
+	addLayerControl();
 }
 
 
@@ -98,7 +110,7 @@ function loadMapList() {
 function selectboxChange() {
 	var selector = document.getElementById("selector");
 	var selectedItem = selector.options[selector.options.selectedIndex];
-	map.removeLayer(tileLayer); //removeLayer()を行わないと、それまで表示されていたレイヤーが残ってしまう。
+	map.removeLayer(baseMap); //removeLayer()を行わないと、それまで表示されていたレイヤーが残ってしまう。
 	tileLayer = L.tileLayer(selectedItem.value, {
 		attribution:  selectedItem.innerText,
 		maxzoom: 10

@@ -1,5 +1,8 @@
 /* showFlickrData.js */
 
+var countFlickr = 0;
+var datumFromFlickr = [];
+
 // flickrAPIから取ってきたデータを加工してGeoJSONを返す
 function flickrToGeoJSON(requestURL) {
 	return new Promise((resolve, reject) => {
@@ -12,7 +15,7 @@ function flickrToGeoJSON(requestURL) {
 						"properties": {
 							"title": photo.id,
 							"description": photo.description._content,
-							"marker-color": "#00FFFF",
+							"marker-color": "#123456",
 							"marker-size": "medium",
 							"marker-symbol": "",
 							"flickr-metadata": {
@@ -49,7 +52,12 @@ function flickrToGeoJSON(requestURL) {
 				// 読み込みリストを更新する
 				var fromFlickr = document.getElementById("fromFlickr");
 				var queries = requestURL.split("?")[1].split("&").map(q => q.split("=")).map(x => `<tr><td>${x[0]}</td><td>${decodeURIComponent(x[1])}</td></tr>`).join("\n");
-				fromFlickr.innerHTML += `<tr><td><input type="checkbox" id="" onChange=""></td><td><table>${queries}</table></td><td>${requestURL}</td>	<td>${json.photos.photo.length}件</td></tr>`;
+				fromFlickr.innerHTML += `
+				<tr>
+					<td><input type="checkbox" id="fromFlickr-${countFlickr}" onChange="showFlickrJSON(${countFlickr})"></td>
+					<td><table class="minitable">${queries}</table></td>
+					<td><a href="${requestURL}" target="_blank">${json.photos.photo.length}件</a></td>
+				</tr>`;
 			}).catch(error => {
 				reject(error);
 			});
@@ -59,9 +67,29 @@ function flickrToGeoJSON(requestURL) {
 	});
 }
 
+
+function generateRandomColorcode() {
+	var str = "";
+	for (var i = 0; i < 6; i++) {
+		str = str + Math.round(Math.random()*15).toString(16);
+	}
+	return "#" + str
+}
+
 // flickrToGeoJSON()で変換したGeoJSONをleafletオブジェクトに変換して表示する
 function showFlickrData(geojson) {
-	L.geoJSON(geojson, {
+	var pointStyle = {
+		"radius": 15,
+		"color": generateRandomColorcode(),
+		"fillColor": generateRandomColorcode(),
+		"weight": 5,
+		"opacity": 0.9,
+	};
+	var output = L.geoJSON(geojson, {
+		// デフォルトの青色ピンではなく、L.circleMarkerを利用する
+		pointToLayer: function (feature, latlng) {
+			return L.circleMarker(latlng, pointStyle);
+		},
 		onEachFeature: function (feature, layer) {
 			var popupText = `
 				<div class="popupText">
@@ -90,7 +118,10 @@ function showFlickrData(geojson) {
 				</div>`;
 			layer.bindPopup(popupText);
 		}
-	}).addTo(map);
+	});
+	datumFromFlickr.push(output);
+	countFlickr = countFlickr + 1;
+	//layerControl.addOverlay(output, "from flickr");
 }
 
 // 入力画面からURLを読み取りFlickrからデータを読み込む

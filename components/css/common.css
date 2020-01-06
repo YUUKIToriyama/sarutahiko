@@ -32,6 +32,16 @@ table img {
 	width: auto;
 }
 
+
+.minitable td {
+	padding: 0;
+	margin: 0;
+}
+
+.urlform {
+	width: 90%;
+}
+
 .popupText {
 	width: inherit;
 }
