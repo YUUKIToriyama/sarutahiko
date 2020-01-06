@@ -8,21 +8,19 @@ var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", 
 });
 tileLayer.addTo(map);
 
-L.CustomControl = L.Control.extend({
-	onAdd: function(map) {
-		var ctrl1 = L.DomUtil.create("div");
-		ctrl1.innerHTML = `<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()"><option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option></select>`;
-		return ctrl1;
+// mapにベースマップ選択ボタンを追加
+var selectboxCreate = L.Control.extend({
+	options: {
+		potision: "topright",
 	},
-	onRemove: function(map) {
-		//
+	onAdd: function(map) {
+		var container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+		container.innerHTML = `<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()"><option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option></select>`;
+		return container;
 	}
 });
-L.control.custom = function(opts) {
-	return new L.CustomControl(opts);
-}
 
-L.control.custom({potision: "buttomleft"}).addTo(map);
+map.addControl(new selectboxCreate());
 	
 window.onload = x => {
 	loadMapList();
@@ -68,4 +66,10 @@ function selectboxChange() {
 		maxzoom: 10
 	});
 	tileLayer.addTo(map)
+}
+
+
+function changeView(longitude, latitude, zoomLevel) {
+	// longitude:経度 latitude:緯度 zoomLevel:ズームレベル
+	map.setView([latitude, longitude], zoomLevel);
 }
