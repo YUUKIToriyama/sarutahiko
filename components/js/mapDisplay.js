@@ -8,22 +8,60 @@ var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", 
 });
 tileLayer.addTo(map);
 
-// mapにベースマップ選択ボタンを追加
-var selectboxCreate = L.Control.extend({
-	options: {
-		potision: "topright",
-	},
-	onAdd: function(map) {
-		var container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
-		container.innerHTML = `<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()"><option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option></select>`;
-		return container;
-	}
-});
 
-map.addControl(new selectboxCreate());
-	
 window.onload = x => {
+	addSelectBasemapControl();
+	addChangeViewControl();
+}
+
+
+// mapにベースマップ選択ボタンを追加
+function addSelectBasemapControl() {
+	var selectboxCreate = L.Control.extend({
+		options: {
+			potision: "topright"
+		},
+		onAdd: function(map) {
+			var container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+			container.innerHTML = `<select name="choose_basemap" id="selector" size="1" onchange="selectboxChange()"><option value="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png">ベースマップを選択</option></select>`;
+			return container;
+		}
+	});
+	map.addControl(new selectboxCreate());
 	loadMapList();
+}
+
+// changeView()を呼び出すフォームを追加
+function addChangeViewControl() {
+	var changeViewControl = L.Control.extend({
+		option: {
+			potision: "buttomright"
+		},
+		onAdd: function(map) {
+			var container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+			container.innerHTML = `
+				<form name="setView" id="setview"><fieldset><legend>中心点を変更</legend>
+					<input type="number" id="longitude" name="longitude" min="-180" max="180" placeholder="-180~180">
+					<label for="longitude">経度</label>
+					<br>
+					<input type="number" id="latitude" name="latitude" min="-90" max="90" placeholder="-90~90">
+					<label for="latitude">緯度</label>
+					<br>
+					<input type="number" id="zoomlevel" name="zoomlevel" min="0" max="10" placeholder="0~10">
+					<label for="zoomlevel">ズームレベル</label>
+					<br>
+					<input type="button" onclick="changeView(document.getElementById('longitude').value, document.getElementById('latitude').value, document.getElementById('zoomlevel').value)" value="変更">
+				</fieldset></form>
+				<style>
+					#setview input {
+						width: 5em;
+					}
+				</style>`;
+			container.style.backgroundColor = "white";
+			return container;
+		}
+	});
+	map.addControl(new changeViewControl());
 }
 
 

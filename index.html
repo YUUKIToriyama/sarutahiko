@@ -17,21 +17,6 @@
 			<div id="map"></div>
 
 			<div id="">
-				<form name="setView">
-					<fieldset>
-						<legend>中心点を変更</legend>
-						<label for="longitude">経度</label>
-						<input type="number" id="longitude" name="longitude" min="-180" max="180" value="135"/>
-						<br>
-						<label for="latitude">緯度</label>
-						<input type="number" id="latitude" name="latitude" min="-90" max="90" value="35"/>
-						<br>
-						<label for="zoomlevel">ズームレベル</label>
-						<input type="number" id="zoomlevel" name="zoomlevel" min="0" max="10" value="7"/>
-						<br>
-						<input type="button" onclick="changeView(document.getElementById('longitude').value, document.getElementById('latitude').value, document.getElementById('zoomlevel').value)" value="変更"/>
-					</fieldset>
-				</form>
 				<form name="localGeoJSON">
 					<fieldset>
 						<legend>GeoJSONファイルのアップロード</legend>
@@ -46,7 +31,7 @@
 						</table>
 					</fieldset>
 				</form>
-				<script type="text/javascript" src="components/js/load_localgeojson.js"></script>
+				<script type="text/javascript" src="components/js/loadLocalGeoJSON.js"></script>
 				<form name="remoteGeoJSON">
 					<fieldset>
 						<legend>リモートにあるGeoJSONファイルを読み込む</legend>
@@ -78,7 +63,7 @@
 						</table>
 					</fieldset>
 				</form>
-				<script type="text/javascript" src="components/js/load_remotegeojson.js"></script>
+				<script type="text/javascript" src="components/js/loadRemoteGeoJSON.js"></script>
 				<script type="text/javascript">
 					document.onkeypress = x => {
 						if (window.event.keyCode == 13 && document.activeElement.id != "loadButton") {
@@ -91,8 +76,8 @@
 
 		</div>
 
-		<script type="text/javascript" src="components/js/map_display.js" charset="UTF-8"></script>
-		<script type="text/javascript" src="components/js/geojson_display.js"></script>
+		<script type="text/javascript" src="components/js/mapDisplay.js"></script>
+		<script type="text/javascript" src="components/js/geojsonDisplay.js"></script>
 		<script type="text/javascript" src="components/js/showFlickrData.js"></script>
 	</body>
 </html>
