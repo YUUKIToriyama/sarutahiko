@@ -2,7 +2,7 @@
   {
     "国土地理院": [
       {
-        "name": "電子国土基本図 - 国土地理院",
+        "name": "標準地図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
         "attribution": "国土地理院"
       },
@@ -12,8 +12,261 @@
         "attribution": "国土地理院"
       },
       {
-        "name": "全国最新写真",
+        "name": "English",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図25000(土地条件)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lcm25k_2012/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "土地条件図(初期整備版)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lcm25k/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "沿岸海域土地条件図(平成元年以降)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ccm1/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "土地条件図(昭和63年以前)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ccm2/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "火山基本図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/vbm/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "火山基本図データ(基図)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_bm/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "火山基本図データ(陰影段彩図)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_colorrel/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "火山基本図データ(写真地図)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_pm/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "火山土地条件図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/vlcd/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図50000(首都圏2005)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_capital2005/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図50000(首都圏2000)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_capital2000/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図50000(中部圏2003)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_chubu2003/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図50000(近畿圏2008)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_kinki2008/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "数値地図50000(近畿圏2001)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_kinki2001/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "土地利用図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lum200k/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "湖沼図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lake1/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "湖沼データ",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lakedata/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "標準地図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "淡色地図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "白地図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "写真",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "空中写真・衛星画像(2007〜)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "2004年〜(簡易空中写真)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/airphoto/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "国土画像情報(第四期：1988～1990年撮影)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo4/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "国土画像情報(第三期：1984～1986年撮影)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo3/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "国土画像情報(第二期：1979～1983年撮影)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "国土画像情報(第一期：1974～1978年撮影)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "空中写真(1961～1969年)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "空中写真(1945〜1950年)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_USA10/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "空中写真(1936年)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_riku10/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "単写真",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/pp/{z}/{x}/{y}.geojson",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "色別標高図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "デジタル標高地形図(東京都区部)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/d1-no455/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "アナグリフ(カラー)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/anaglyphmap_color/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "アナグリフ(グレー)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/anaglyphmap_gray/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "陰影起伏図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "陰影起伏図(全球版)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/earthhillshade/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "傾斜量図",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "全国傾斜量区分図(雪崩関連)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/slopezone1map/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "活断層図(都市圏活断層図)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "治水地形分類図 更新版(2007〜2014年)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "治水地形分類図 初版(1976〜1978年)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/lcmfc1/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "明治期の低湿地",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/swale/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "土地被覆(GLCNMO)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gmld_glcnmo2/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "植生(樹木被覆率)",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/gmld_ptc2/{z}/{x}/{y}.png",
+        "attribution": "国土地理院"
+      },
+      {
+        "name": "自然災害伝承碑",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/disaster_lore_all/{z}/{x}/{y}.geojson",
+        "attribution": "国土地理院"
+      }
+    ]
+  },
+  {
+    "林野庁": [
+      {
+        "name": "森林(固有林)の空中写真",
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/rinya/{z}/{x}/{y}.png",
+        "attribution": "林野庁"
+      }
+    ]
+  },
+  {
+    "産総研地質調査総合センター": [
+      {
+        "name": "シームレス地質図",
+        "url": "https://gbank.gsj.jp/seamless/v2/api/1.2/tiles/{z}/{y}/{x}.png",
+        "attribution": "産総研地質調査総合センター"
+      },
+      {
+        "name": "200万分の1日本地質図",
+        "url": "https://gbank.gsj.jp/tilemap/geologicmap/wmts/1.0.0/geologicmap2000k/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
         "attribution": "国土地理院"
       }
     ]
