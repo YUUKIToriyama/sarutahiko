@@ -8,7 +8,6 @@ var tileLayer = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", 
 });
 tileLayer.addTo(map);
 
-
 L.CustomControl = L.Control.extend({
 	onAdd: function(map) {
 		var ctrl1 = L.DomUtil.create("div");
@@ -26,9 +25,14 @@ L.control.custom = function(opts) {
 L.control.custom({potision: "buttomleft"}).addTo(map);
 	
 window.onload = x => {
+	loadMapList();
+}
+
+
+function loadMapList() {
 	// 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
-	//var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json";
-	var urlBasemap = "../../data/basemaps.json";
+	var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json"; //ウェブ上で使うときは絶対アドレスで指定しないとうまく行かない
+	//var urlBasemap = "../../data/basemaps.json";
 	getRemoteData(urlBasemap).then(res => {
 		res.json().then(json => {
 			// jsonファイルの読み込みに成功したら
