@@ -1,4 +1,4 @@
-/* geojson_display.js */
+/* geojsonDisplay.js */
 
 function showRemoteGeoJSON(id) {
 	var checkbox = document.getElementById(`loadedRemoteGeoJSON-${id}`);

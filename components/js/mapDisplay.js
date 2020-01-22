@@ -1,4 +1,4 @@
-/* map_display.js */
+/* mapDisplay.js */
 
 var baseMap = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	id: "default map",
@@ -78,34 +78,30 @@ function addChangeViewControl() {
 }
 
 
-function loadMapList() {
+async function loadMapList() {
 	// 外部ファイル"basemaps.json"に使用できるベースマップのリストを用意している。これを読み出してプルダウンリストを作る
 	var urlBasemap = "https://yuukitoriyama.github.io/sarutahiko/data/basemaps.json"; //ウェブ上で使うときは絶対アドレスで指定しないとうまく行かない
 	//var urlBasemap = "../../data/basemaps.json";
-	getRemoteData(urlBasemap).then(res => {
-		res.json().then(json => {
-			// jsonファイルの読み込みに成功したら
-			var pulldownList = document.getElementById("selector");
-			json.forEach(hash => {
-				Object.entries(hash).forEach(mapdatum => {
-					var optGroup = document.createElement("optgroup");
-					optGroup.label = mapdatum[0];
-					mapdatum[1].forEach(mapdata => {
-						var option = document.createElement("option");
-						option.value = mapdata.url;
-						option.innerText = mapdata.name;
-						optGroup.appendChild(option);
-					});
-					pulldownList.appendChild(optGroup);
-				});	
+	const response = await fetch(urlBasemap, {method:"GET", mode:"cors"}).catch(err => {alert(err); return err});
+	const json = await response.json();
+
+	// jsonファイルの読み込みに成功したら
+	var pulldownList = document.getElementById("selector");
+	json.forEach(hash => {
+		Object.entries(hash).forEach(mapdatum => {
+			var optGroup = document.createElement("optgroup");
+			optGroup.label = mapdatum[0];
+			mapdatum[1].forEach(mapdata => {
+				var option = document.createElement("option");
+				option.value = mapdata.url;
+				option.innerText = mapdata.name;
+				optGroup.appendChild(option);
 			});
-		}).catch(err => {
-			console.log(err);
-		})
-	}).catch(err => {
-		console.log(err);
+			pulldownList.appendChild(optGroup);
+		});	
 	});
 }
+
 
 // プルダウンリストの選択を変更するとそれに合わせてベースマップが変わる仕組み
 function selectboxChange() {

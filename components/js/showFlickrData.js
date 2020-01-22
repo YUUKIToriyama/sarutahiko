@@ -4,69 +4,62 @@ var countFlickr = 0;
 var datumFromFlickr = [];
 
 // flickrAPIから取ってきたデータを加工してGeoJSONを返す
-function flickrToGeoJSON(requestURL) {
-	return new Promise((resolve, reject) => {
-		getRemoteData(requestURL).then(response => {
-			response.json().then(json => {
-				// flickrAPIから返ってきたJSONデータをGeoJSONフォーマットに変換する
-				var generatedJson = json.photos.photo.map(photo => { 
-					return {
-						"type": "Feature",
-						"properties": {
-							"title": photo.id,
-							"description": photo.description._content,
-							"marker-color": "#123456",
-							"marker-size": "medium",
-							"marker-symbol": "",
-							"flickr-metadata": {
-								"id": photo.id,
-								"owner_name": photo.ownername,
-								"owner_id": photo.owner,
-								"title": photo.title,
-								"datataken": photo.datataken,
-								"url_t": photo.url_t,
-								"url_o": photo.url_o,
-								"url_sq": photo.url_sq,
-								"full_height": photo.height_o,
-								"full_width": photo.width_o,
-								"description": photo.description._content
-							}
-						},
-						"geometry": {
-							"type": "Point",
-							"coordinates": [
-								photo.longitude, photo.latitude
-							]
-						}
-					}
-				});
-	
-				var geoJsonOutput = {
-					"type": "FeatureCollection",
-					"features": generatedJson
-				};
+// 入力画面からURLを読み取りFlickrからデータを読み込む
+async function displayFlickrData() {
+	const requestURL = document.getElementById("flickrRequestUrl").value;
+	const response = await fetch(requestURL, {method:"GET", redirect:"follow", mode:"cors"}).catch(err => {alert(err); return err});
+	const json = await response.json().catch(err => {alert(err); return err});
 
-				// resolveに返り値を格納して、あとでPromise.thenによって呼び出す。
-				resolve(geoJsonOutput);
-
-				// 読み込みリストを更新する
-				var fromFlickr = document.getElementById("fromFlickr");
-				var queries = requestURL.split("?")[1].split("&").map(q => q.split("=")).map(x => `<tr><td>${x[0]}</td><td>${decodeURIComponent(x[1])}</td></tr>`).join("\n");
-				fromFlickr.innerHTML += `
-				<tr>
-					<td><input type="checkbox" id="fromFlickr-${countFlickr}" onChange="showFlickrJSON(${countFlickr})"></td>
-					<td><table class="minitable">${queries}</table></td>
-					<td><a href="${requestURL}" target="_blank">${json.photos.photo.length}件</a></td>
-				</tr>`;
-			}).catch(error => {
-				reject(error);
-			});
-		}).catch(error => {
-			reject(error);
-		});
+	// flickrAPIから返ってきたJSONデータをGeoJSONフォーマットに変換する
+	var generatedJson = json.photos.photo.map(photo => { 
+		return {
+			"type": "Feature",
+			"properties": {
+				"title": photo.id,
+				"description": photo.description._content,
+				"marker-color": "#123456",
+				"marker-size": "medium",
+				"marker-symbol": "",
+				"flickr-metadata": {
+					"id": photo.id,
+					"owner_name": photo.ownername,
+					"owner_id": photo.owner,
+					"title": photo.title,
+					"datataken": photo.datataken,
+					"url_t": photo.url_t,
+					"url_o": photo.url_o,
+					"url_sq": photo.url_sq,
+					"full_height": photo.height_o,
+					"full_width": photo.width_o,
+					"description": photo.description._content
+				}
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					photo.longitude, photo.latitude
+				]
+			}
+		}
 	});
+	var geoJsonOutput = {
+		"type": "FeatureCollection",
+		"features": generatedJson
+	};
+	
+	// 読み込みリストを更新する
+	var fromFlickr = document.getElementById("fromFlickr");
+	var queries = requestURL.split("?")[1].split("&").map(q => q.split("=")).map(x => `<tr><td>${x[0]}</td><td>${decodeURIComponent(x[1])}</td></tr>`).join("\n");
+	fromFlickr.innerHTML += `
+		<tr>
+			<td><input type="checkbox" id="fromFlickr-${countFlickr}" onChange="showFlickrJSON(${countFlickr})"></td>
+			<td><table class="minitable">${queries}</table></td>
+			<td><a href="${requestURL}" target="_blank">${json.photos.photo.length}件</a></td>
+		</tr>`;
+	
+	// 整形したgeojsonを表示する
+	showFlickrData(geoJsonOutput);
 }
-
 
 function generateRandomColorcode() {
 	var str = "";
@@ -122,16 +115,4 @@ function showFlickrData(geojson) {
 	datumFromFlickr.push(output);
 	countFlickr = countFlickr + 1;
 	//layerControl.addOverlay(output, "from flickr");
-}
-
-// 入力画面からURLを読み取りFlickrからデータを読み込む
-function displayFlickrData(){
-	var url = document.getElementById("flickrRequestUrl").value;
-	console.log(url);
-	flickrToGeoJSON(url).then(function onFulfilled(value) {
-		console.log(value);
-		showFlickrData(value);
-	}).catch(function onRejected(error) {
-		console.log(error);
-	});
 }
