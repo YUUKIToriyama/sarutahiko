@@ -17,7 +17,7 @@ var layerControl;
 function addLayerControl() {
 	// レイヤコントロールのパーツを追加する
 	// layerControlに後付けで新しいレイヤを追加するには layerControl.addOverlay(layer, "layer name");
-	layerControl = L.control.layers();
+	layerControl = L.control.layers(null, null, {collapsed: false});
 	layerControl.addTo(map);
 }
 
@@ -54,10 +54,10 @@ function addChangeViewControl() {
 			var container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
 			container.innerHTML = `
 				<form name="setView" id="setview"><fieldset><legend>中心点を変更</legend>
-					<input type="number" id="longitude" name="longitude" min="-180" max="180" placeholder="-180~180">
+					<input type="number" id="longitude" name="longitude" min="-180" max="180" step="any" placeholder="-180~180">
 					<label for="longitude">経度</label>
 					<br>
-					<input type="number" id="latitude" name="latitude" min="-90" max="90" placeholder="-90~90">
+					<input type="number" id="latitude" name="latitude" min="-90" max="90" step="any" placeholder="-90~90">
 					<label for="latitude">緯度</label>
 					<br>
 					<input type="number" id="zoomlevel" name="zoomlevel" min="0" max="10" placeholder="0~10">
