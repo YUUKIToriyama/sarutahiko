@@ -8,15 +8,16 @@ var baseMap = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 var map = L.map("map", {
 	center: [35.0, 135.0],
 	zoom: 9,
-	layers: [baseMap]
 });
+
+baseMap.addTo(map);
 
 
 var layerControl;
 function addLayerControl() {
 	// レイヤコントロールのパーツを追加する
 	// layerControlに後付けで新しいレイヤを追加するには layerControl.addOverlay(layer, "layer name");
-	layerControl = L.control.layers({"basemap": baseMap});
+	layerControl = L.control.layers();
 	layerControl.addTo(map);
 }
 
@@ -111,11 +112,11 @@ function selectboxChange() {
 	var selector = document.getElementById("selector");
 	var selectedItem = selector.options[selector.options.selectedIndex];
 	map.removeLayer(baseMap); //removeLayer()を行わないと、それまで表示されていたレイヤーが残ってしまう。
-	tileLayer = L.tileLayer(selectedItem.value, {
+	baseMap = L.tileLayer(selectedItem.value, {
 		attribution:  selectedItem.innerText,
 		maxzoom: 10
 	});
-	tileLayer.addTo(map)
+	baseMap.addTo(map)
 }
 
 
