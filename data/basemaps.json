@@ -275,7 +275,7 @@
     "OSM": [
       {
         "name": "OpenStreetMap's Standard tile layer",
-        "url": "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+        "url": "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "attribution": "openstreetmap.org"
       },
       {
@@ -285,7 +285,7 @@
       },
       {
         "name": "Wikimedia Maps",
-        "url": "https://maps.wikimedia.org/osm-intl/${z}/${x}/${y}.png",
+        "url": "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
         "attribution": "wikimedia.org"
       },
       {
