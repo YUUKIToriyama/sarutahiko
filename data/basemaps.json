@@ -4,247 +4,338 @@
       {
         "name": "標準地図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "淡色地図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "English",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png",
+	"maxZoom": 11,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図25000(土地条件)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lcm25k_2012/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "土地条件図(初期整備版)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lcm25k/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "沿岸海域土地条件図(平成元年以降)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ccm1/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
-        "name": "土地条件図(昭和63年以前)",
+        "name": "沿岸海域土地条件図(昭和63年以前)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ccm2/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "火山基本図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/vbm/{z}/{x}/{y}.png",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "火山基本図データ(基図)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_bm/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "火山基本図データ(陰影段彩図)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_colorrel/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "火山基本図データ(写真地図)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/vbmd_pm/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "火山土地条件図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/vlcd/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図50000(首都圏2005)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_capital2005/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図50000(首都圏2000)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_capital2000/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図50000(中部圏2003)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_chubu2003/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図50000(近畿圏2008)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_kinki2008/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "数値地図50000(近畿圏2001)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum4bl_kinki2001/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "土地利用図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lum200k/{z}/{x}/{y}.png",
+	"maxZoom": 14,
         "attribution": "国土地理院"
       },
       {
         "name": "湖沼図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lake1/{z}/{x}/{y}.png",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "湖沼データ",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lakedata/{z}/{x}/{y}.png",
-        "attribution": "国土地理院"
-      },
-      {
-        "name": "標準地図",
-        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
-        "attribution": "国土地理院"
-      },
-      {
-        "name": "淡色地図",
-        "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "白地図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png",
+	"maxZoom": 14,
         "attribution": "国土地理院"
       },
       {
         "name": "写真",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "空中写真・衛星画像(2007〜)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "2004年〜(簡易空中写真)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/airphoto/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "国土画像情報(第四期：1988～1990年撮影)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo4/{z}/{x}/{y}.jpg",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "国土画像情報(第三期：1984～1986年撮影)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo3/{z}/{x}/{y}.jpg",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "国土画像情報(第二期：1979～1983年撮影)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "国土画像情報(第一期：1974～1978年撮影)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "空中写真(1961～1969年)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "空中写真(1945〜1950年)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_USA10/{z}/{x}/{y}.png",
+	"maxZoom": 17,
         "attribution": "国土地理院"
       },
       {
         "name": "空中写真(1936年)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_riku10/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "国土地理院"
       },
       {
         "name": "単写真",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/pp/{z}/{x}/{y}.geojson",
+	"maxZoom": 14,
         "attribution": "国土地理院"
       },
       {
         "name": "色別標高図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png",
+	"maxZoom": 15,
         "attribution": "国土地理院"
       },
       {
         "name": "デジタル標高地形図(東京都区部)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/d1-no455/{z}/{x}/{y}.png",
+	"maxZoom": 14,
         "attribution": "国土地理院"
       },
       {
         "name": "アナグリフ(カラー)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/anaglyphmap_color/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "アナグリフ(グレー)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/anaglyphmap_gray/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "陰影起伏図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "陰影起伏図(全球版)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/earthhillshade/{z}/{x}/{y}.png",
+	"maxZoom": 8,
         "attribution": "国土地理院"
       },
       {
         "name": "傾斜量図",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png",
+	"maxZoom": 15,
         "attribution": "国土地理院"
       },
       {
         "name": "全国傾斜量区分図(雪崩関連)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/slopezone1map/{z}/{x}/{y}.png",
+	"maxZoom": 15,
         "attribution": "国土地理院"
       },
       {
         "name": "活断層図(都市圏活断層図)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "治水地形分類図 更新版(2007〜2014年)",
+	"maxZoom": 16,
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/{z}/{x}/{y}.png",
         "attribution": "国土地理院"
       },
       {
         "name": "治水地形分類図 初版(1976〜1978年)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/lcmfc1/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "明治期の低湿地",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/swale/{z}/{x}/{y}.png",
+	"maxZoom": 16,
         "attribution": "国土地理院"
       },
       {
         "name": "土地被覆(GLCNMO)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gmld_glcnmo2/{z}/{x}/{y}.png",
+	"maxZoom": 7,
         "attribution": "国土地理院"
       },
       {
         "name": "植生(樹木被覆率)",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/gmld_ptc2/{z}/{x}/{y}.png",
+	"maxZoom": 7,
         "attribution": "国土地理院"
       },
       {
-        "name": "自然災害伝承碑",
-        "url": "https://cyberjapandata.gsi.go.jp/xyz/disaster_lore_all/{z}/{x}/{y}.geojson",
-        "attribution": "国土地理院"
+        "name": "磁気図（偏角）／偏角一覧図(2015年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu2015_chijiki_d/{z}/{x}/{y}.png",
+	"maxZoom": 13,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（伏角）(2015年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu2015_chijiki_i/{z}/{x}/{y}.png",
+	"maxZoom": 8,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（全磁力）(2015年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu2015_chijiki_f/{z}/{x}/{y}.png",
+	"maxZoom": 8,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（水平分力）(2015年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu2015_chijiki_h/{z}/{x}/{y}.png",
+	"maxZoom": 8,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（鉛直分力）(2015年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu2015_chijiki_z/{z}/{x}/{y}.png",
+	"maxZoom": 8,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（偏角）／偏角一覧図(2010年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu_chijikid/{z}/{x}/{y}.png",
+	"maxZoom": 13,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（伏角）(2010年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu_chijikii/{z}/{x}/{y}.png",
+	"maxZoom": 7,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（全磁力）(2010年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu_chijikif/{z}/{x}/{y}.png",
+	"maxZoom": 7,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（水平分力）(2010年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu_chijikih/{z}/{x}/{y}.png",
+	"maxZoom": 7,
+	"attribution": "国土地理院"
+      },
+      {
+        "name": "磁気図（鉛直分力）(2010年10月)",
+	"url": "https://cyberjapandata.gsi.go.jp/xyz/jikizu_chijikiz/{z}/{x}/{y}.png",
+	"maxZoom": 7,
+	"attribution": "国土地理院"
       }
     ]
   },
@@ -253,6 +344,7 @@
       {
         "name": "森林(固有林)の空中写真",
         "url": "https://cyberjapandata.gsi.go.jp/xyz/rinya/{z}/{x}/{y}.png",
+	"maxZoom": 18,
         "attribution": "林野庁"
       }
     ]
@@ -280,7 +372,7 @@
       },
       {
         "name": "German fork of the Standard tile layer",
-        "url": "https://a.tile.openstreetmap.de/${z}/${x}/${y}.png",
+        "url": "https://a.tile.openstreetmap.de/{z}/{x}/{y}.png",
         "attribution": "openstreetmap.de"
       },
       {
@@ -290,67 +382,67 @@
       },
       {
         "name": "OpenCycleMap",
-        "url": "http://tile.thunderforest.com/cycle/${z}/${x}/${y}.png",
+        "url": "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
         "attribution": "thunderforest.com"
       },
       {
         "name": "Humanitarian map style",
-        "url": "http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png",
+        "url": "http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
         "attribution": "openstreetmap.fr"
       },
       {
         "name": "OSM France",
-        "url": "http://a.tile.openstreetmap.fr/osmfr/${z}/${x}/${y}.png",
+        "url": "http://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
         "attribution": "openstreetmap.fr"
       },
       {
         "name": "wmflabs Hike & Bike",
-        "url": "https://tiles.wmflabs.org/hikebike/${z}/${x}/${y}.png",
+        "url": "https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png",
         "attribution": "wmflabs.org"
       },
       {
         "name": "wmflabs Hillshading",
-        "url": "http://tiles.wmflabs.org/hillshading/${z}/${x}/${y}.png",
+        "url": "http://tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png",
         "attribution": "wmflabs.org"
       },
       {
         "name": "wmflabs OSM B&W mapnik map grayscale",
-        "url": "https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png",
+        "url": "https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",
         "attribution": "wmflabs.org"
       },
       {
         "name": "wmflabs OSM no labels mapnik map without labels",
-        "url": "https://tiles.wmflabs.org/osm-no-labels/${z}/${x}/${y}.png",
+        "url": "https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png",
         "attribution": "wmflabs.org"
       },
       {
         "name": "Stamen Toner",
-        "url": "http://a.tile.stamen.com/toner/${z}/${x}/${y}.png",
+        "url": "http://a.tile.stamen.com/toner/{z}/{x}/{y}.png",
         "attribution": "stamen.com"
       },
       {
         "name": "Stamen Watercolor",
-        "url": "http://c.tile.stamen.com/watercolor/${z}/${x}/${y}.jpg",
+        "url": "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
         "attribution": "stamen.com"
       },
       {
         "name": "Transport Map",
-        "url": "http://tile.thunderforest.com/transport/${z}/${x}/${y}.png",
+        "url": "http://tile.thunderforest.com/transport/{z}/{x}/{y}.png",
         "attribution": "thunderforest.com"
       },
       {
         "name": "Thunderforest Landscape",
-        "url": "http://tile.thunderforest.com/landscape/${z}/${x}/${y}.png",
+        "url": "http://tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
         "attribution": "thunderforest.com"
       },
       {
         "name": "Thunderforest Outdoor",
-        "url": "http://tile.thunderforest.com/outdoors/${z}/${x}/${y}.png",
+        "url": "http://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png",
         "attribution": "thunderforest.com"
       },
       {
         "name": "Öpnvkarte",
-        "url": "http://tile.memomaps.de/tilegen/${z}/${x}/${y}.png",
+        "url": "http://tile.memomaps.de/tilegen/{z}/{x}/{y}.png",
         "attribution": "Öpnvkarte.de"
       },
       {
